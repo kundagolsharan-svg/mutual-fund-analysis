@@ -1,0 +1,17 @@
+File,Rows Before,Rows After,Columns,Duplicates Removed,Missing Before,Missing After
+01_fund_master.csv,40,40,15,0,0,0
+02_nav_history.csv,46000,46000,3,0,0,0
+03_aum_by_fund_house.csv,90,90,5,0,0,0
+04_monthly_sip_inflows.csv,48,48,6,0,12,0
+05_category_inflows.csv,144,144,3,0,0,0
+06_industry_folio_count.csv,21,21,6,0,0,0
+07_scheme_performance.csv,40,40,19,0,0,0
+08_investor_transactions.csv,32778,32778,13,0,0,0
+09_portfolio_holdings.csv,322,322,8,0,0,0
+10_benchmark_indices.csv,8050,8050,3,0,0,0
+Axis_Bluechip.csv,3610,3610,2,0,0,2182
+HDFC_Top_100_Direct.csv,3136,3136,2,0,0,1900
+ICICI_Bluechip.csv,3352,3351,2,0,0,2026
+Kotak_Bluechip.csv,3346,3346,2,0,0,2023
+Nippon_Large_Cap.csv,3343,3343,2,0,0,2018
+SBI_Bluechip.csv,3281,3281,2,0,0,1982
