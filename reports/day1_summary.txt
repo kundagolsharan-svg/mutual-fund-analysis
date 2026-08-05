@@ -1,94 +1,99 @@
-Day 1 — Data Quality Summary 
+DAY 1 DATA QUALITY REPORT
+================================================================================
 
-Summary notes (overall)
-
-
-01_fund_master.csv
-Rows: 40
-Columns: 15 (amfi_code, fund_house, scheme_name, category, sub_category, plan, launch_date, benchmark, expense_ratio_pct, exit_load_pct, min_sip_amount, min_lumpsum_amount, fund_manager, risk_category, sebi_category_code)
-Key checks: distinct amfi_code = 40 (one-to-one with rows)
-Missing / blanks: none detected in any column
-Duplicates: no duplicate full rows
-Notes: launch_date appears well-formed (YYYY-MM-DD). risk_category present for all records.
-
-
-02_nav_history.csv
-Rows: 46,000
-Columns: 3 (amfi_code, date, nav)
-Missing / blanks: none detected
-Numeric parsing: nav values are numeric
-Date parsing: date values conform to YYYY-MM-DD pattern (parseable)
-Duplicate keys: no duplicate (amfi_code + date) keys found
-Notes: large timeseries table — convert date column to datetime and consider indexing by (amfi_code, date) 
-for fast joins/queries.
-
-
-03_aum_by_fund_house.csv
-Rows: 90
-Columns: 5 (date, fund_house, aum_lakh_crore, aum_crore, num_schemes)
-Missing / blanks: none detected
-Numeric parsing: aum_crore / aum_lakh_crore parse as numeric
-Date parsing: date values match YYYY-MM-DD pattern
-Notes: good quality for time-series of AUM by fund house.
-
-
-04_monthly_sip_inflows.csv
-Rows: 48
-Columns: 6 (month, sip_inflow_crore, active_sip_accounts_crore, new_sip_accounts_lakh, sip_aum_lakh_crore,
-yoy_growth_pct)
-Missing / blanks: yoy_growth_pct has missing values (12 missing)
-Notes: month column is YYYY-MM and appears consistent.
-Fill or compute missing yoy_growth_pct where possible (compute from prior-year month inflows) or mark as NA.
-
-
-05_category_inflows.csv
-Rows: 144
-Columns: 3 (month, category, net_inflow_crore)
-Missing / blanks: none detected
-Numeric parsing: net_inflow_crore numeric
-Notes: month is YYYY-MM, appears consistent.
-
-
-06_industry_folio_count.csv
-Rows: 21
-Columns: 6 (month, total_folios_crore, equity_folios_crore, debt_folios_crore, hybrid_folios_crore, others_folios_crore)
-Missing / blanks: none detected
-Numeric parsing: numeric columns parse correctly
-Notes: ready for analysis.
-
-
-07_scheme_performance.csv
-Rows: 40
-Columns: 18+ (amfi_code, scheme_name, fund_house, category, plan, return_1yr_pct, return_3yr_pct, return_5yr_pct, benchmark_3yr_pct, alpha, beta, sharpe_ratio, sortino_ratio, std_dev_ann_pct, max_drawdown_pct, aum_crore, expense_ratio_pct, morningstar_rating, risk_grade)
-Missing / blanks: none detected in risk_grade (and no other large missing columns flagged)
-Numeric parsing: metric columns parse as numeric (where applicable)
-Notes: risk_grade present; morningstar_rating and many metrics are available — verify expected ranges when modeling.
-
-
-08_investor_transactions.csv
-Rows: 32,778
-Columns: 13 (investor_id, transaction_date, amfi_code, transaction_type, amount_inr, state, city, city_tier, age_group, gender, annual_income_lakh, payment_mode, kyc_status)
-Missing / blanks: no missing state values detected
-Date parsing: transaction_date matches YYYY-MM-DD pattern
-Distinct investor_id count: 5,000 distinct investor_id values (suggests many transactions per investor)
-Duplicates: no exact full-row duplicates found
-Notes: amount_inr is numeric-like in samples; check for outliers (very large amounts) and for inconsistent payment_mode or kyc_status categories before aggregation.
-
-
-09_portfolio_holdings.csv
-Rows: 322
-Columns: 8 (amfi_code, stock_symbol, stock_name, sector, weight_pct, market_value_cr, current_price_inr, portfolio_date)
-Missing / blanks: none flagged in the checks run
-Numeric parsing: weight_pct and market_value_cr / current_price_inr parse as numeric
-Date parsing: portfolio_date parseable (YYYY-MM-DD)
-Duplicate keys: no duplicate (amfi_code + stock_symbol + portfolio_date) entries found
-Notes: weights look numeric — verify that weights per amfi_code sum to ~100% (or expected total) for each portfolio_date.
-
-
-10_benchmark_indices.csv
-Rows: 8,050
-Columns: 3 (date, index_name, close_value)
-Missing / blanks: none flagged
-Numeric parsing: close_value numeric
-Date parsing: date parseable (YYYY-MM-DD)
-Notes: time series is ready to join to scheme-level benchmarks by date.
+Dataset : 01_fund_master.csv
+Rows : 40
+Columns : 15
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : 02_nav_history.csv
+Rows : 46000
+Columns : 3
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : 03_aum_by_fund_house.csv
+Rows : 90
+Columns : 5
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : 04_monthly_sip_inflows.csv
+Rows : 48
+Columns : 6
+Total Missing Values : 12
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : 05_category_inflows.csv
+Rows : 144
+Columns : 3
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : 06_industry_folio_count.csv
+Rows : 21
+Columns : 6
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : 07_scheme_performance.csv
+Rows : 40
+Columns : 19
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : 08_investor_transactions.csv
+Rows : 32778
+Columns : 13
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : 09_portfolio_holdings.csv
+Rows : 322
+Columns : 8
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : 10_benchmark_indices.csv
+Rows : 8050
+Columns : 3
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : Axis_Bluechip.csv
+Rows : 3610
+Columns : 2
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : HDFC_Top_100_Direct.csv
+Rows : 3136
+Columns : 2
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : ICICI_Bluechip.csv
+Rows : 3352
+Columns : 2
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : Kotak_Bluechip.csv
+Rows : 3346
+Columns : 2
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : Nippon_Large_Cap.csv
+Rows : 3343
+Columns : 2
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
+Dataset : SBI_Bluechip.csv
+Rows : 3281
+Columns : 2
+Total Missing Values : 0
+Duplicate Rows : 0
+------------------------------------------------------------
