@@ -1,0 +1,97 @@
+table,column,dtype,nullable,sample
+01_fund_master_clean,amfi_code,int64,False,119551
+01_fund_master_clean,fund_house,str,False,SBI Mutual Fund
+01_fund_master_clean,scheme_name,str,False,SBI Bluechip Fund - Regular Plan - Growth
+01_fund_master_clean,category,str,False,Equity
+01_fund_master_clean,sub_category,str,False,Large Cap
+01_fund_master_clean,plan,str,False,Regular
+01_fund_master_clean,launch_date,str,False,2006-02-14
+01_fund_master_clean,benchmark,str,False,NIFTY 100 TRI
+01_fund_master_clean,expense_ratio_pct,float64,False,1.54
+01_fund_master_clean,exit_load_pct,float64,False,1.0
+01_fund_master_clean,min_sip_amount,int64,False,500
+01_fund_master_clean,min_lumpsum_amount,int64,False,1000
+01_fund_master_clean,fund_manager,str,False,Sohini Andani
+01_fund_master_clean,risk_category,str,False,Moderate
+01_fund_master_clean,sebi_category_code,str,False,EC01
+02_nav_history_clean,amfi_code,int64,False,100016
+02_nav_history_clean,date,str,False,2022-01-03
+02_nav_history_clean,nav,float64,False,520.4608
+03_aum_by_fund_house_clean,date,str,False,2022-03-31
+03_aum_by_fund_house_clean,fund_house,str,False,SBI Mutual Fund
+03_aum_by_fund_house_clean,aum_lakh_crore,float64,False,6.05
+03_aum_by_fund_house_clean,aum_crore,int64,False,605000
+03_aum_by_fund_house_clean,num_schemes,int64,False,186
+04_monthly_sip_inflows_clean,month,str,False,2022-01
+04_monthly_sip_inflows_clean,sip_inflow_crore,int64,False,11517
+04_monthly_sip_inflows_clean,active_sip_accounts_crore,float64,False,4.91
+04_monthly_sip_inflows_clean,new_sip_accounts_lakh,float64,False,9.1
+04_monthly_sip_inflows_clean,sip_aum_lakh_crore,float64,False,4.8
+04_monthly_sip_inflows_clean,yoy_growth_pct,float64,False,28.295
+05_category_inflows_clean,month,str,False,2024-04
+05_category_inflows_clean,category,str,False,Large Cap
+05_category_inflows_clean,net_inflow_crore,float64,False,2413.0
+06_industry_folio_count_clean,month,str,False,2022-01
+06_industry_folio_count_clean,total_folios_crore,float64,False,13.26
+06_industry_folio_count_clean,equity_folios_crore,float64,False,9.28
+06_industry_folio_count_clean,debt_folios_crore,float64,False,1.86
+06_industry_folio_count_clean,hybrid_folios_crore,float64,False,0.8
+06_industry_folio_count_clean,others_folios_crore,float64,False,1.33
+07_scheme_performance_clean,amfi_code,int64,False,119551
+07_scheme_performance_clean,scheme_name,str,False,SBI Bluechip Fund - Regular Plan - Growth
+07_scheme_performance_clean,fund_house,str,False,SBI Mutual Fund
+07_scheme_performance_clean,category,str,False,Large Cap
+07_scheme_performance_clean,plan,str,False,Regular
+07_scheme_performance_clean,return_1yr_pct,float64,False,12.42
+07_scheme_performance_clean,return_3yr_pct,float64,False,12.36
+07_scheme_performance_clean,return_5yr_pct,float64,False,14.45
+07_scheme_performance_clean,benchmark_3yr_pct,float64,False,11.49
+07_scheme_performance_clean,alpha,float64,False,0.87
+07_scheme_performance_clean,beta,float64,False,0.89
+07_scheme_performance_clean,sharpe_ratio,float64,False,0.88
+07_scheme_performance_clean,sortino_ratio,float64,False,1.29
+07_scheme_performance_clean,std_dev_ann_pct,float64,False,14.0
+07_scheme_performance_clean,max_drawdown_pct,float64,False,-21.7
+07_scheme_performance_clean,aum_crore,int64,False,14288
+07_scheme_performance_clean,expense_ratio_pct,float64,False,1.54
+07_scheme_performance_clean,morningstar_rating,int64,False,4
+07_scheme_performance_clean,risk_grade,str,False,Moderate
+08_investor_transactions_clean,investor_id,str,False,INV003054
+08_investor_transactions_clean,transaction_date,str,False,2024-01-01
+08_investor_transactions_clean,amfi_code,int64,False,119092
+08_investor_transactions_clean,transaction_type,str,False,SIP
+08_investor_transactions_clean,amount_inr,int64,False,1834
+08_investor_transactions_clean,state,str,False,Telangana
+08_investor_transactions_clean,city,str,False,Hyderabad
+08_investor_transactions_clean,city_tier,str,False,T30
+08_investor_transactions_clean,age_group,str,False,56+
+08_investor_transactions_clean,gender,str,False,Female
+08_investor_transactions_clean,annual_income_lakh,float64,False,77.1
+08_investor_transactions_clean,payment_mode,str,False,UPI
+08_investor_transactions_clean,kyc_status,str,False,Verified
+09_portfolio_holdings_clean,amfi_code,int64,False,119551
+09_portfolio_holdings_clean,stock_symbol,str,False,POWERGRID
+09_portfolio_holdings_clean,stock_name,str,False,Power Grid Corporation
+09_portfolio_holdings_clean,sector,str,False,Utilities
+09_portfolio_holdings_clean,weight_pct,float64,False,13.85
+09_portfolio_holdings_clean,market_value_cr,float64,False,737.09
+09_portfolio_holdings_clean,current_price_inr,float64,False,6011.08
+09_portfolio_holdings_clean,portfolio_date,str,False,2025-12-31
+10_benchmark_indices_clean,date,str,False,2022-01-03
+10_benchmark_indices_clean,index_name,str,False,NIFTY50
+10_benchmark_indices_clean,close_value,float64,False,17492.79
+Axis_Bluechip_clean,date,str,True,2026-04-08
+Axis_Bluechip_clean,nav,float64,False,6257.8917
+HDFC_Top_100_Direct_clean,date,str,True,2026-04-08
+HDFC_Top_100_Direct_clean,nav,float64,False,208.7577
+ICICI_Bluechip_clean,date,str,True,2026-04-08
+ICICI_Bluechip_clean,nav,float64,False,112.916
+Kotak_Bluechip_clean,date,str,True,2026-04-08
+Kotak_Bluechip_clean,nav,float64,False,254.5024
+nav_history_clean,amfi_code,int64,False,100016
+nav_history_clean,date,str,False,2022-01-03
+nav_history_clean,nav,float64,False,520.4608
+Nippon_Large_Cap_clean,date,str,True,2026-04-08
+Nippon_Large_Cap_clean,nav,float64,False,102.9909
+SBI_Bluechip_clean,date,str,True,2026-04-08
+SBI_Bluechip_clean,nav,float64,False,106.9327

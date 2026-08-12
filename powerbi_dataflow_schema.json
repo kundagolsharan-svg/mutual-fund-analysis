@@ -1,0 +1,672 @@
+{
+  "tables": {
+    "01_fund_master_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\01_fund_master_clean.csv",
+      "columns": [
+        {
+          "name": "amfi_code",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "fund_house",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "scheme_name",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "category",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "sub_category",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "plan",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "launch_date",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "benchmark",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "expense_ratio_pct",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "exit_load_pct",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "min_sip_amount",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "min_lumpsum_amount",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "fund_manager",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "risk_category",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "sebi_category_code",
+          "dtype": "str",
+          "nullable": false
+        }
+      ]
+    },
+    "02_nav_history_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\02_nav_history_clean.csv",
+      "columns": [
+        {
+          "name": "amfi_code",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "date",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "nav",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    },
+    "03_aum_by_fund_house_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\03_aum_by_fund_house_clean.csv",
+      "columns": [
+        {
+          "name": "date",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "fund_house",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "aum_lakh_crore",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "aum_crore",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "num_schemes",
+          "dtype": "int64",
+          "nullable": false
+        }
+      ]
+    },
+    "04_monthly_sip_inflows_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\04_monthly_sip_inflows_clean.csv",
+      "columns": [
+        {
+          "name": "month",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "sip_inflow_crore",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "active_sip_accounts_crore",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "new_sip_accounts_lakh",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "sip_aum_lakh_crore",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "yoy_growth_pct",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    },
+    "05_category_inflows_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\05_category_inflows_clean.csv",
+      "columns": [
+        {
+          "name": "month",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "category",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "net_inflow_crore",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    },
+    "06_industry_folio_count_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\06_industry_folio_count_clean.csv",
+      "columns": [
+        {
+          "name": "month",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "total_folios_crore",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "equity_folios_crore",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "debt_folios_crore",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "hybrid_folios_crore",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "others_folios_crore",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    },
+    "07_scheme_performance_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\07_scheme_performance_clean.csv",
+      "columns": [
+        {
+          "name": "amfi_code",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "scheme_name",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "fund_house",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "category",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "plan",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "return_1yr_pct",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "return_3yr_pct",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "return_5yr_pct",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "benchmark_3yr_pct",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "alpha",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "beta",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "sharpe_ratio",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "sortino_ratio",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "std_dev_ann_pct",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "max_drawdown_pct",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "aum_crore",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "expense_ratio_pct",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "morningstar_rating",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "risk_grade",
+          "dtype": "str",
+          "nullable": false
+        }
+      ]
+    },
+    "08_investor_transactions_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\08_investor_transactions_clean.csv",
+      "columns": [
+        {
+          "name": "investor_id",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "transaction_date",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "amfi_code",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "transaction_type",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "amount_inr",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "state",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "city",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "city_tier",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "age_group",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "gender",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "annual_income_lakh",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "payment_mode",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "kyc_status",
+          "dtype": "str",
+          "nullable": false
+        }
+      ]
+    },
+    "09_portfolio_holdings_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\09_portfolio_holdings_clean.csv",
+      "columns": [
+        {
+          "name": "amfi_code",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "stock_symbol",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "stock_name",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "sector",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "weight_pct",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "market_value_cr",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "current_price_inr",
+          "dtype": "float64",
+          "nullable": false
+        },
+        {
+          "name": "portfolio_date",
+          "dtype": "str",
+          "nullable": false
+        }
+      ]
+    },
+    "10_benchmark_indices_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\10_benchmark_indices_clean.csv",
+      "columns": [
+        {
+          "name": "date",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "index_name",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "close_value",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    },
+    "Axis_Bluechip_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\Axis_Bluechip_clean.csv",
+      "columns": [
+        {
+          "name": "date",
+          "dtype": "str",
+          "nullable": true
+        },
+        {
+          "name": "nav",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    },
+    "HDFC_Top_100_Direct_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\HDFC_Top_100_Direct_clean.csv",
+      "columns": [
+        {
+          "name": "date",
+          "dtype": "str",
+          "nullable": true
+        },
+        {
+          "name": "nav",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    },
+    "ICICI_Bluechip_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\ICICI_Bluechip_clean.csv",
+      "columns": [
+        {
+          "name": "date",
+          "dtype": "str",
+          "nullable": true
+        },
+        {
+          "name": "nav",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    },
+    "Kotak_Bluechip_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\Kotak_Bluechip_clean.csv",
+      "columns": [
+        {
+          "name": "date",
+          "dtype": "str",
+          "nullable": true
+        },
+        {
+          "name": "nav",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    },
+    "Nippon_Large_Cap_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\Nippon_Large_Cap_clean.csv",
+      "columns": [
+        {
+          "name": "date",
+          "dtype": "str",
+          "nullable": true
+        },
+        {
+          "name": "nav",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    },
+    "SBI_Bluechip_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\SBI_Bluechip_clean.csv",
+      "columns": [
+        {
+          "name": "date",
+          "dtype": "str",
+          "nullable": true
+        },
+        {
+          "name": "nav",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    },
+    "nav_history_clean": {
+      "source_csv": "C:\\Users\\shara\\OneDrive\\Desktop\\mutual fund analysis\\data\\processed\\nav_history_clean.csv",
+      "columns": [
+        {
+          "name": "amfi_code",
+          "dtype": "int64",
+          "nullable": false
+        },
+        {
+          "name": "date",
+          "dtype": "str",
+          "nullable": false
+        },
+        {
+          "name": "nav",
+          "dtype": "float64",
+          "nullable": false
+        }
+      ]
+    }
+  },
+  "relationships": [
+    {
+      "from_table": "01_fund_master_clean",
+      "from_column": "amfi_code",
+      "to_table": "02_nav_history_clean",
+      "to_column": "amfi_code",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    },
+    {
+      "from_table": "01_fund_master_clean",
+      "from_column": "amfi_code",
+      "to_table": "07_scheme_performance_clean",
+      "to_column": "amfi_code",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    },
+    {
+      "from_table": "01_fund_master_clean",
+      "from_column": "amfi_code",
+      "to_table": "08_investor_transactions_clean",
+      "to_column": "amfi_code",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    },
+    {
+      "from_table": "01_fund_master_clean",
+      "from_column": "amfi_code",
+      "to_table": "09_portfolio_holdings_clean",
+      "to_column": "amfi_code",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    },
+    {
+      "from_table": "Date",
+      "from_column": "Date",
+      "to_table": "02_nav_history_clean",
+      "to_column": "date",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    },
+    {
+      "from_table": "Date",
+      "from_column": "Date",
+      "to_table": "10_benchmark_indices_clean",
+      "to_column": "date",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    },
+    {
+      "from_table": "Date",
+      "from_column": "Date",
+      "to_table": "08_investor_transactions_clean",
+      "to_column": "transaction_date",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    },
+    {
+      "from_table": "Date",
+      "from_column": "Date",
+      "to_table": "09_portfolio_holdings_clean",
+      "to_column": "portfolio_date",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    },
+    {
+      "from_table": "Date",
+      "from_column": "Date",
+      "to_table": "03_aum_by_fund_house_clean",
+      "to_column": "date",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    },
+    {
+      "from_table": "Date",
+      "from_column": "Date",
+      "to_table": "04_monthly_sip_inflows_clean",
+      "to_column": "month",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    },
+    {
+      "from_table": "Date",
+      "from_column": "Date",
+      "to_table": "05_category_inflows_clean",
+      "to_column": "month",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    },
+    {
+      "from_table": "Date",
+      "from_column": "Date",
+      "to_table": "06_industry_folio_count_clean",
+      "to_column": "month",
+      "cardinality": "One-to-many",
+      "cross_filter_direction": "Single"
+    }
+  ],
+  "notes": [
+    "Create a Date table in Power Query or DAX with Date, Year, Quarter, Month, and YearMonth columns.",
+    "Do not create fund dimension joins for peer NAV tables because they lack amfi_code.",
+    "Use 01_fund_master_clean as the primary fund dimension on amfi_code."
+  ]
+}
