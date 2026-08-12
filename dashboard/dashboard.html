@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bluestock Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f9fc; color: #20232a; }
+    header { background: #0b3d91; color: #fff; padding: 24px 32px; }
+    h1 { margin: 0; font-size: 2rem; }
+    .container { max-width: 1100px; margin: 24px auto; padding: 0 24px; }
+    .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+    .section-title { color: #0b3d91; margin-bottom: 12px; }
+    .image-row { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+    .image-card { width: calc(50% - 16px); min-width: 280px; }
+    .image-card img { width: 100%; border-radius: 8px; }
+    .caption { margin-top: 8px; color: #555; font-size: 0.95rem; }
+    @media (max-width: 800px) { .image-card { width: 100%; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bluestock Mutual Fund Dashboard</h1>
+    <p>Static dashboard summary of the mutual fund analytics pipeline.</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2 class="section-title">Key Metrics</h2>
+      <p>This dashboard highlights NAV trends, SIP inflows, AUM share, and risk metrics across the fund universe.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">NAV Trend</h2>
+      <img src="../outputs/plots/nav_trends_all_schemes.png" alt="NAV Trends" />
+      <div class="caption">Daily NAV trends across schemes show 2023 gains and 2024 corrections.</div>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">SIP Inflows</h2>
+      <img src="../outputs/plots/monthly_sip_trend.png" alt="SIP Trend" />
+      <div class="caption">Monthly SIP inflows demonstrate consistent retail investment growth.</div>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">Benchmark Performance</h2>
+      <img src="../outputs/charts/benchmark_comparison.png" alt="Benchmark Comparison" />
+      <div class="caption">Top funds compared to NIFTY benchmarks over the recent three-year window.</div>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">Sector Allocation</h2>
+      <img src="../outputs/plots/sector_allocation_donut.png" alt="Sector Allocation" />
+      <div class="caption">Sector exposures from portfolio holdings at the latest reporting date.</div>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">AUM Distribution</h2>
+      <img src="../outputs/plots/aum_by_house_year.png" alt="AUM by House" />
+      <div class="caption">Yearly AUM growth by fund house highlights concentration among large managers.</div>
+    </div>
+  </div>
+</body>
+</html>
